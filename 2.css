@@ -1,0 +1,15 @@
+/* .text_closed {
+    display: none;
+} */
+
+.container {
+    text-align: center;
+    justify-content: center;
+}
+
+.cat-img {
+    height: 500px;
+    width: 740px;
+    margin-top: 20px;
+    cursor: pointer;
+}
