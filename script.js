@@ -79,15 +79,17 @@
 //     // }
 // });
 
-// Практика 1
+//30.12.2022 - 01.12.2022//
+
+// Практика 1, алёрт приветствия
 
 const buttonNode = document.querySelector('.js-button');
 
 buttonNode.addEventListener('click', function () {
-    alert ('Привет!')
+    alert ('Привет! Я слышал, что если нажать на котиков ты узнаешь где их найти!')
 });
 
-// Практика 2
+// Практика 2, вывод линка картинки
 
 const catImageLink = document.querySelector('.image-link');
 const catImageNode = document.querySelector('.cat-img');
@@ -98,4 +100,86 @@ catImageNode.addEventListener('click', function (event) {
     <h2>Ссылка на эту картинку:</h2>
     <p>${event.target.src}</p>
     `
+});
+
+// Практика 3, светофор
+
+const cubeNode = document.querySelector('.js-cube');
+const redCubeButtonNode = document.querySelector('.js-button-red');
+const yellowCubeButtonNode = document.querySelector('.js-button-yellow');
+const greenCubeButtonNode = document.querySelector('.js-button-green');
+const randomCubeButtonNode = document.querySelector('.js-button-random');
+
+redCubeButtonNode.addEventListener('click', function () {
+   cubeNode.style.backgroundColor = 'red'
+});
+
+yellowCubeButtonNode.addEventListener('click', function () {
+    cubeNode.style.backgroundColor = 'yellow'
+});
+
+greenCubeButtonNode.addEventListener('click', function () {
+    cubeNode.style.backgroundColor = 'green'
+});
+
+const colors = ['green', 'yellow', 'red']
+colorsitem = 0;
+
+randomCubeButtonNode.addEventListener('click', function () {
+
+    cubeNode.style.backgroundColor = colors[colorsitem];
+    colorsitem++;
+    if (colorsitem === 3) {
+        colorsitem = 0;
+    };
+
+});
+
+// Практика 4, ввод и сумма чисел
+
+const mathProblemButtonNode = document.querySelector('.js-task');
+const mathProblemContainerNode = document.querySelector('.js-task-container');
+const mathPrompt1 = document.querySelector('.js-math1');
+const mathPrompt2 = document.querySelector('.js-math2');
+const mathSum = document.querySelector('.js-math3');
+const mathText = document.querySelector('.math-text')
+
+mathProblemButtonNode.addEventListener('click', function () {
+    
+    mathPrompt1.classList.remove('mathButtons');
+    mathPrompt2.classList.remove('mathButtons');
+    mathSum.classList.remove('mathButtons');
+
+});
+
+let num1 = 0;
+mathPrompt1.addEventListener('click', function () {
+    num1 = +prompt();
+});
+
+let num2 = 0;
+mathPrompt2.addEventListener('click', function () {
+    num2 = +prompt();
+});
+
+mathSum.addEventListener('click', function () {
+    let sum = (num1 + num2);
+    mathText.innerHTML = `
+    <h3>Первое число равно: ${num1}</h3>
+    <h3>Второе число равно: ${num2}</h3>
+    <h2>Сумма чисел равна: ${sum}</h2>
+    `;
+});
+
+// Практика 5, список дел
+
+const toDoButtonNode = document.querySelector('.js-toDoButton');
+const toDoText = document.querySelector('.toDoTask')
+
+let text;
+toDoButtonNode.addEventListener('click', function () {
+    text = prompt();
+    toDoText.innerHTML += `
+    <div class = 'toDoText'>${text}</div>
+    `;
 });
