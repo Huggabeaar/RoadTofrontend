@@ -4,7 +4,6 @@
 
 .container {
     text-align: center;
-    justify-content: center;
 }
 
 .cat-img {
@@ -12,4 +11,60 @@
     width: 740px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.cube {
+    height: 175px;
+    width: 175px;
+    background-color: black;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.red-cube {
+    height: 175px;
+    width: 175px;
+    background-color: red;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.yellow-cube {
+    height: 175px;
+    width: 175px;
+    background-color: yellow;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.green-cube {
+    height: 175px;
+    width: 175px;
+    background-color: green;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.buttons {
+    margin: 25px 25px;
+}
+
+.math-container {
+    text-align: center; 
+}
+
+.mathButtons {
+   display: none;
+}
+
+.display {
+    margin: 25px 25px;
+}
+
+.toDoButton {
+   margin-top: 25px;
+}
+
+.toDoText {
+    padding-top: 15px;
 }
