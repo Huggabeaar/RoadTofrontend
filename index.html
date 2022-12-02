@@ -10,50 +10,145 @@
     <link href="http://fonts.cdnfonts.com/css/clash-display" rel="stylesheet">
 </head>
 <body>
-    <!-- <h1>Hello world</h1>
-    <button class="js-btn">Вывести текст</button>
-    <div>
-        <a class="js-link" href="http://ya.ru">Это милая ссылочка =)</a>
-    </div>
-    <div class="js-text-container"></div>
     
-    <div class="js-person"></div>
-        <div class="js-old"></div>
-            <div class="js-avito-stories avito-stories">
-                <div class="js-stories"></div>
-    </div>
-    <h1 class="js-main-title main-title">Это первый заголовок!</h1>
-    <div class="js-container"></div>
+    <!-- <input type="button"
+    class="js-btn-input"
+    value="Пока!">
 
-    <button class="js-button">Скрыть текст</button>
-    <p class="js-button-text">Это текст</p> -->
+    <button class="js-btn">Привет!</button> -->
 
-    <div class="container">
-
-    <button class="js-button">Показать текст</button>
-    <div></div>
-
-    <img class="cat-img" src="https://proprikol.ru/wp-content/uploads/2020/08/krasivye-kartinki-kotikov-54.jpg" alt="Kotik">
-   
-    <div class="image-link"></div>
-    <div class="js-cube cube"></div>
-        <button class="js-button-red buttons">Красный</button>
-        <button class="js-button-yellow buttons">Жёлтый</button>
-        <button class="js-button-green buttons">Зелёный</button>
-        <button class="js-button-random buttons">Случайный</button>
+    <!-- <div>
+        <label for="a">Число А</label>
+        <input 
+            class="js-a-input"
+            type="text" 
+            name="a" 
+            id="a"
+            placeholder="Введите первое число:"
+            >
     </div>
 
-    <div class="math-container">
-    <button class="js-task">Сложить два числа</button>
-    <div class="js-task-container">
-        <button class = 'mathButtons display js-math1'>Введите первое число</button>
-        <button class = 'mathButtons display js-math2'>Введите второе число</button>
-        <button class = 'mathButtons display js-math3'>Получить сумму чисел</button>
-        <div class="math-text"></div>
+    <div>
+        <label for="b">Число В</label>
+        <input 
+            class="js-b-input"
+            type="text" 
+            name="b" 
+            id="b"
+            placeholder="Введите второе число:"
+            >
     </div>
-    <button class="js-toDoButton toDoButton">Добавить задачу</button>
-    <div class="toDoTask"></div>
+
+    <div>
+        <label for="ok">Числа указаны верно?</label>
+        <input 
+            class="js-ok-input"
+            type="checkbox" 
+            name="ok" 
+            id="ok"
+            >
     </div>
+
+    <div>
+
+        <label for="math-type">Что делаем с числами?</label>
+
+        <select
+        class="js-math-type"
+         name="math-type" 
+         id="math-type">
+            <option value="sum">Сложение</option>
+            <option value="minus">Вычитание</option>
+        </select>
+
+    </div>
+
+    <div>
+        <button class="js-sum-btn">Посчитать сумму</button>
+    </div>
+
+    <div>
+        <p>Итого: <span class="js-output"></span></p>
+    </div> -->
+
+<!--Первое задание-->
+
+    <form class="form">
+        <label for="">Одно изменяющееся сообщение.</label>
+    <div class="alone-chat">
+
+    <label class="block" for="text">Введите сообщение:</label>
+    <input 
+        class="block js-input" 
+        id="text" 
+        type="text"
+        placeholder="Текст сообщения...">
+
+    <button class="block js-btn">Отправить сообщение</button>
+    <div class="messages-story"></div>
+    </div>
+
+    </form>
+
+<!--Первое задание-->
+
+<!--Второе задание-->
+    
+    <form class="form2">
+        <label for="">Много сообщений.</label>
+        <div class="alone-chat2">
+    
+        <label class="block" for="text">Введите сообщение:</label>
+        <input 
+            class="block js-input2" 
+            id="text" 
+            type="text"
+            placeholder="Текст сообщения...">
+    
+        <button class="block js-btn2">Отправить сообщение</button>
+        <div class="messages-story2"></div>
+        </div>
+    
+        </form>
+
+<!--task 1 to 2-->
+
+<!--task 1 to 2-->
+    
+        <form class="form3">
+       
+            <label>Ввод даты.</label>
+
+            <div>
+
+                <label class="data" for="type">Введите день:</label>
+                <select
+                class="data"
+                name="type" 
+                id="type">
+                </select>
+
+                <label class="data" for="type">Введите месяц:</label>
+                <select
+                class="data"
+                name="type" 
+                id="type2">
+                </select>
+
+                <label class="data" for="type">Введите год:</label>
+                <select
+                class= "data"
+                name="type" 
+                id="type3">
+                </select>
+
+                <button class="data">Вывести дату</button>
+    
+            </div>
+
+        </form>
+
+<!--task 1 to 2--> 
 
 <script src="script.js"></script>
 

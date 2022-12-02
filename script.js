@@ -1,185 +1,143 @@
-// // Как обрабатывать события
-// // 1. Слушатель
-// // 2. Обработчик
-// // 3. Объект события
-// // 4. Поведение по-умолчанию и его остановка
+//Формы
+
+function log(text) {
+    console.log(text);
+};
+
+// Виды элементов
+// 1. Где смотреть
+// 2. Примеры
 
 // const btnNode = document.querySelector('.js-btn');
-// // const linkNode = document.querySelector('.js-link');
-
-// // linkNode.addEventListener('click', function (event) {
-// //     event.preventDefault();
-// // });
-
-// // Примеры: Вывести текст по нажатию на кнопку
-
-// const TEXT = 'Привет! Ты вывел текст, умничка!';
-// const textContainerNode = document.querySelector('.js-container');
+// const appNode = document.querySelector('.js-app');
 
 // btnNode.addEventListener('click', function () {
-//     textContainerNode.innerHTML = `<h1>${TEXT}</h1>`;
+//     appNode.innerHTML += `
+//     <h1>Приветик, Вова!</h1>
+//     `
 // });
 
-// // Вывести адрес ссылки по клике на неё
+//Получение значения из формы
+// 1. Отдельный элемент
+// 2. Вся форма целиком
+// const nameInputNode = document.querySelector('.js-name-input');
 
-// const linkNode = document.querySelector('.js-link');
+// console.log(nameInputNode.value);
 
-// linkNode.addEventListener('click', function (event) {
-//     event.preventDefault();
+// const aInputNode = document.querySelector('.js-a-input');
+// const bInputNode = document.querySelector('.js-b-input');
+// const okInputNode = document.querySelector('.js-ok-input');
+// const mathTypeSelectNode = document.querySelector('.js-math-type')
+// const sumBtnNode = document.querySelector('.js-sum-btn');
+// const outputNode = document.querySelector('.js-output');
 
-//     const href = event.target.href;
-
-//     textContainerNode.innerHTML = `
-//         <h2>Эта ссылка ведёт на страницу:</h2>
-//         <p>${href}</p>
-//     `;
-//     console.log(event.target.href)
-// });
-
-// // Вывести текст: "Вы проскролили на столько-то пикселей"
-
-// window.addEventListener('scroll', function () {
-//    console.log('scroll', window.pageYOffset);
-//    textContainerNode.innerHTML = `
-//     <p>Страница проскроленна на ${window.pageYOffset}px </p>
-//    `;
-// });
-
-// //Вывести кнопку и показать текст
-// // По нажатию показать
-// // По нажатию скрыть
-// const TEXT_OPEN = 'Показать текст'
-// const TEXT_CLOSE = 'Скрыть текст'
-// const buttonNode = document.querySelector('.js-button');
-// const textNode = document.querySelector('.js-button-text');
-// let isTextClosed = false;
-
-// function getBtnText(isTextClosed) {
-//     if (!isTextClosed) {
-//         return TEXT_CLOSE;
-//     }
-
-//     return TEXT_OPEN;
+// function sum(a, b) {
+//     return a + b;
 // };
 
-// buttonNode.textContent = getBtnText(isTextClosed);
+// function minus(a, b) {
+//     return a - b;
+// };
 
-// buttonNode.addEventListener('click', function () {
-//     isTextClosed = !isTextClosed;
-//     console.log(isTextClosed)
-//    textNode.classList.toggle('text_closed');
+// sumBtnNode.addEventListener('click', function () {
+//     const canCalculateSum = okInputNode.checked;
+//     console.log(mathTypeSelectNode.value);
 
-//    buttonNode.textContent = getBtnText(isTextClosed);
+//     if (!canCalculateSum) {
+//         return;
+//     }
 
-//     // if (isTextClosed) {
-//     //     buttonNode.textContent = TEXT_OPEN;
-//     // }
-//     // else {
-//     //     buttonNode.textContent = TEXT_CLOSE;
-//     // }
+//     console.log(okInputNode.checked);
+
+//     const a = Number(aInputNode.value);
+//     const b = Number(bInputNode.value);
+//     let output = '';
+//     console.log(a, b);
+
+//     switch(mathTypeSelectNode.value) {
+//         case 'sum':
+//             output = sum(a, b);
+//             break;
+           
+//         case 'minus':
+//             output = minus(a, b);
+//             break;
+
+//         default:
+//             break;
+//     }
+    
+//     outputNode.innerText = output;
 // });
 
-//30.12.2022 - 01.12.2022//
+// // События элементов
+// // 1. change, срабатывает после того, как мы ввели и вышли из элемента (Можно использовать для валидации).
+// // 2. input, срабатывает сразу в момент обновления элемента.
+// // 3. focus, срабатывает тогда, когда мы нажимаем на элемент.
+// // 4. blur, срабатывает когда мы выходим из элемента.
+// aInputNode.addEventListener('input', function () {
+//     outputNode.innerText = Number(aInputNode.value) + Number(bInputNode.value);
+//     // Моментальный вывод
+// })
 
-// Практика 1, алёрт приветствия
+// // Использование значений из формы реально благодаря:
+// // 1. button click
+// // 2. on change
+// // form submit
 
-const buttonNode = document.querySelector('.js-button');
+// Практика 1, одинокий чат с историей сообщений
 
-buttonNode.addEventListener('click', function () {
-    alert ('Привет! Я слышал, что если нажать на котиков ты узнаешь где их найти!')
-});
+const inputNode = document.querySelector('.js-input');
+const buttonInputNode = document.querySelector('.js-btn');
+const messagesStory = document.querySelector('.messages-story');
 
-// Практика 2, вывод линка картинки
+buttonInputNode.addEventListener('click', function () {
+    event.preventDefault();
 
-const catImageLink = document.querySelector('.image-link');
-const catImageNode = document.querySelector('.cat-img');
-
-catImageNode.addEventListener('click', function (event) {
-
-    catImageLink.innerHTML = `
-    <h2>Ссылка на эту картинку:</h2>
-    <p>${event.target.src}</p>
-    `
-});
-
-// Практика 3, светофор
-
-const cubeNode = document.querySelector('.js-cube');
-const redCubeButtonNode = document.querySelector('.js-button-red');
-const yellowCubeButtonNode = document.querySelector('.js-button-yellow');
-const greenCubeButtonNode = document.querySelector('.js-button-green');
-const randomCubeButtonNode = document.querySelector('.js-button-random');
-
-redCubeButtonNode.addEventListener('click', function () {
-   cubeNode.style.backgroundColor = 'red'
-});
-
-yellowCubeButtonNode.addEventListener('click', function () {
-    cubeNode.style.backgroundColor = 'yellow'
-});
-
-greenCubeButtonNode.addEventListener('click', function () {
-    cubeNode.style.backgroundColor = 'green'
-});
-
-const colors = ['green', 'yellow', 'red']
-colorsitem = 0;
-
-randomCubeButtonNode.addEventListener('click', function () {
-
-    cubeNode.style.backgroundColor = colors[colorsitem];
-    colorsitem++;
-    if (colorsitem === 3) {
-        colorsitem = 0;
-    };
-
-});
-
-// Практика 4, ввод и сумма чисел
-
-const mathProblemButtonNode = document.querySelector('.js-task');
-const mathProblemContainerNode = document.querySelector('.js-task-container');
-const mathPrompt1 = document.querySelector('.js-math1');
-const mathPrompt2 = document.querySelector('.js-math2');
-const mathSum = document.querySelector('.js-math3');
-const mathText = document.querySelector('.math-text')
-
-mathProblemButtonNode.addEventListener('click', function () {
-    
-    mathPrompt1.classList.remove('mathButtons');
-    mathPrompt2.classList.remove('mathButtons');
-    mathSum.classList.remove('mathButtons');
-
-});
-
-let num1 = 0;
-mathPrompt1.addEventListener('click', function () {
-    num1 = +prompt();
-});
-
-let num2 = 0;
-mathPrompt2.addEventListener('click', function () {
-    num2 = +prompt();
-});
-
-mathSum.addEventListener('click', function () {
-    let sum = (num1 + num2);
-    mathText.innerHTML = `
-    <h3>Первое число равно: ${num1}</h3>
-    <h3>Второе число равно: ${num2}</h3>
-    <h2>Сумма чисел равна: ${sum}</h2>
+    messagesStory.innerHTML = `
+    <h2 class = 'inputText'>${inputNode.value}</h2>
     `;
 });
 
-// Практика 5, список дел
+// dialogue
 
-const toDoButtonNode = document.querySelector('.js-toDoButton');
-const toDoText = document.querySelector('.toDoTask')
+const inputNode2 = document.querySelector('.js-input2');
+const buttonInputNode2 = document.querySelector('.js-btn2');
+const messagesStory2 = document.querySelector('.messages-story2');
 
-let text;
-toDoButtonNode.addEventListener('click', function () {
-    text = prompt();
-    toDoText.innerHTML += `
-    <div class = 'toDoText'>${text}</div>
+buttonInputNode2.addEventListener('click', function () {
+    event.preventDefault();
+
+    messagesStory2.innerHTML += `
+    <p class = 'inputText'>${inputNode2.value}</p>
     `;
 });
+
+// data DD.MM.YY
+
+const select1 = document.querySelector('#type');
+
+
+for (let i = 1; i <= 31; i++) {
+    const option = document.createElement('option');
+    option.textContent = option.value = i;
+    select1.append(option);
+};
+
+const select2 = document.querySelector('#type2');
+
+
+for (let i = 1; i <= 12; i++) {
+    const option = document.createElement('option');
+    option.textContent = option.value = i;
+    select2.append(option);
+};
+
+const select3 = document.querySelector('#type3');
+
+
+for (let i = 1950; i <= 2022; i++) {
+    const option = document.createElement('option');
+    option.textContent = option.value = i;
+    select3.append(option);
+};

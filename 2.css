@@ -1,70 +1,55 @@
-/* .text_closed {
-    display: none;
-} */
-
-.container {
-    text-align: center;
+.alone-chat {
+    
 }
 
-.cat-img {
-    height: 500px;
-    width: 740px;
-    margin-top: 20px;
-    cursor: pointer;
+.block {
+    display: block;
+    margin-top: 15px;
 }
 
-.cube {
-    height: 175px;
-    width: 175px;
-    background-color: black;
-    margin: auto;
-    margin-top: 50px;
+.form {
+    border: solid 2px;
+    padding: 10px 10px;
+    float: left;
 }
 
-.red-cube {
-    height: 175px;
-    width: 175px;
-    background-color: red;
-    margin: auto;
-    margin-top: 50px;
+.messages-story {
+    border: solid 1px;
+    height: 100px;
+    width: 250px;
+    margin-top: 10px;
+    overflow: auto;
 }
 
-.yellow-cube {
-    height: 175px;
-    width: 175px;
-    background-color: yellow;
-    margin: auto;
-    margin-top: 50px;
+.inputText {
+    margin-left: 10px;
 }
 
-.green-cube {
-    height: 175px;
-    width: 175px;
-    background-color: green;
-    margin: auto;
-    margin-top: 50px;
+.form2 {
+    border: solid 2px;
+    padding: 10px 10px;
+    float: left;
+    margin-left: 25px;
 }
 
-.buttons {
-    margin: 25px 25px;
+.messages-story2 {
+    border: solid 1px;
+    height: 100px;
+    width: 250px;
+    margin-top: 10px;
+    overflow: auto;
 }
 
-.math-container {
-    text-align: center; 
+.form3 {
+    border: solid 2px;
+    padding: 10px 10px;
+    float: left;
+    margin-left: 25px;
 }
 
-.mathButtons {
-   display: none;
+.data {
+    display: block;
+    margin-top: 10px;
 }
 
-.display {
-    margin: 25px 25px;
-}
-
-.toDoButton {
-   margin-top: 25px;
-}
-
-.toDoText {
-    padding-top: 15px;
-}
+/* end of line */
