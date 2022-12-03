@@ -1,7 +1,3 @@
-.alone-chat {
-    
-}
-
 .block {
     display: block;
     margin-top: 15px;
@@ -13,7 +9,7 @@
     float: left;
 }
 
-.messages-story {
+.messages-story, .messages-story2 {
     border: solid 1px;
     height: 100px;
     width: 250px;
@@ -25,22 +21,7 @@
     margin-left: 10px;
 }
 
-.form2 {
-    border: solid 2px;
-    padding: 10px 10px;
-    float: left;
-    margin-left: 25px;
-}
-
-.messages-story2 {
-    border: solid 1px;
-    height: 100px;
-    width: 250px;
-    margin-top: 10px;
-    overflow: auto;
-}
-
-.form3 {
+.form2, .form3, .form6 {
     border: solid 2px;
     padding: 10px 10px;
     float: left;
@@ -52,4 +33,57 @@
     margin-top: 10px;
 }
 
-/* end of line */
+.form4 {
+    border: solid 2px;
+    padding: 10px 10px;
+    float: left;
+    margin: 25px 25px;
+}
+
+.inputA, .inputB {
+    display: block;
+    margin-top: 10px;
+}
+
+.selectMathType {
+    display: block;
+    margin-top: 5px;
+}
+
+.textMathType {
+    display: block;
+    margin-top: 10px;
+}
+
+.checkbox {  
+    margin-top: 10px;
+}
+
+.btnOutput {
+    display: block;
+    margin-top: 12px;
+}
+
+.js-output, .js-output2 {
+    margin-top: 12px;
+}
+
+.input-name, 
+.input-email,
+.input-number {
+    display: block;
+    margin: 10px;
+}
+
+.labelName, .formBtn {
+    display: block;
+    margin-top: 15px;
+}
+
+.js-formOutput {
+    margin-top: 10px;
+}
+
+.ulist {
+    margin-top: 10px;
+}

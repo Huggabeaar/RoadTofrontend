@@ -85,7 +85,9 @@ function log(text) {
 // // 2. on change
 // // form submit
 
-// Практика 1, одинокий чат с историей сообщений
+
+
+// Практика 1, одинокий чат с одним меняющимся текстом
 
 const inputNode = document.querySelector('.js-input');
 const buttonInputNode = document.querySelector('.js-btn');
@@ -99,7 +101,7 @@ buttonInputNode.addEventListener('click', function () {
     `;
 });
 
-// dialogue
+// Практика 2, диалог с множеством сообщений
 
 const inputNode2 = document.querySelector('.js-input2');
 const buttonInputNode2 = document.querySelector('.js-btn2');
@@ -113,7 +115,10 @@ buttonInputNode2.addEventListener('click', function () {
     `;
 });
 
-// data DD.MM.YY
+// Практика 3, вывод даты
+
+const dataBtnNode = document.querySelector('.js-data-btn');
+const dataTextNode = document.querySelector('.js-data-text');
 
 const select1 = document.querySelector('#type');
 
@@ -141,3 +146,224 @@ for (let i = 1950; i <= 2022; i++) {
     option.textContent = option.value = i;
     select3.append(option);
 };
+
+dataBtnNode.addEventListener('click', function () {
+    event.preventDefault();
+
+let monthName;
+
+    if (select2.value == 1) {
+        monthName = 'Января';
+    }
+    else if (select2.value == 2) {
+        monthName = 'Февраля';
+    }
+    else if (select2.value == 3) {
+        monthName = 'Марта';
+    }
+    else if (select2.value == 4) {
+        monthName = 'Апреля';
+    }
+    else if (select2.value == 5) {
+        monthName = 'Мая';
+    }
+    else if (select2.value == 6) {
+        monthName = 'Июня';
+    }
+    else if (select2.value == 7) {
+        monthName = 'Июля';
+    }
+    else if (select2.value == 8) {
+        monthName = 'Августа';
+    }
+    else if (select2.value == 9) {
+        monthName = 'Сентября';
+    }
+    else if (select2.value == 10) {
+        monthName = 'Октября';
+    }
+    else if (select2.value == 11) {
+        monthName = 'Ноября';
+    }
+    else if (select2.value == 12) {
+        monthName = 'Декабря';
+    }
+
+    dataTextNode.innerHTML = `
+    </p>Дата: ${select1.value} ${monthName} ${select3.value} года.</p> 
+    `;
+
+});
+
+// Практика 4, калькулятор
+
+const inputAnode = document.querySelector('.js-input-A');
+const inputBnode = document.querySelector('.js-input-B');
+const selectMathTypeNode = document.querySelector('.js-selectMathType');
+const checkNumbers = document.querySelector('.js-checkbox');
+const btnOutput = document.querySelector('.js-btn-output');
+const outPutNode = document.querySelector('.js-output');
+
+function sumPlus(a, b) {
+    return a + b;
+};
+
+function sumMinus(a, b) {
+    return a - b;
+};
+
+function sumDivision(a, b) {
+    return a / b;
+};
+
+function sumMultiplication(a, b) {
+    return a * b;
+}
+
+btnOutput.addEventListener('click', function () {
+    event.preventDefault();
+
+    const canICalculate = checkNumbers.checked;
+    log(canICalculate);
+
+    if (!canICalculate) {
+        return;
+    }
+
+    let a = Number (inputAnode.value);
+    let b = Number (inputBnode.value);
+    let outPut = '';
+
+    switch (selectMathTypeNode.value) {
+        case 'Minus':
+            outPut = sumMinus (a, b);
+            break;
+
+        case 'Plus':
+            outPut = sumPlus (a, b);
+            break;
+            
+        case 'Division':
+            outPut = sumDivision (a, b);
+            break;
+
+        case 'Multiplication':
+            outPut = sumMultiplication (a, b);
+            break;
+    
+        default:
+            outPut = 'Ошибка!';
+            break;
+    }
+
+    outPutNode.innerHTML = `
+    Результат: ${outPutNode.innerText = outPut}
+    `;
+});
+
+// Практика 5, калькулятор с описанием действия и памятью
+
+const inputAnode2 = document.querySelector('.js-input-A2');
+const inputBnode2 = document.querySelector('.js-input-B2');
+const selectMathTypeNode2 = document.querySelector('.js-selectMathType2');
+const checkNumbers2 = document.querySelector('.js-checkbox2');
+const btnOutput2 = document.querySelector('.js-btn-output2');
+const outPutNode2 = document.querySelector('.js-output2');
+
+function sumPlus(a, b) {
+    return a + b;
+};
+
+function sumMinus(a, b) {
+    return a - b;
+};
+
+function sumDivision(a, b) {
+    return a / b;
+};
+
+function sumMultiplication(a, b) {
+    return a * b;
+}
+
+btnOutput2.addEventListener('click', function () {
+    event.preventDefault();
+
+    const canICalculate = checkNumbers2.checked;
+    log(canICalculate);
+
+    if (!canICalculate) {
+        return;
+    }
+
+    let a = Number (inputAnode2.value);
+    let b = Number (inputBnode2.value);
+    let outPut2 = '';
+
+    switch (selectMathTypeNode2.value) {
+        case 'Minus':
+            outPut2 = `${a} - ${b} = ${sumMinus(a, b)}`;
+            break;
+
+        case 'Plus':
+            outPut2 = `${a} + ${b} = ${sumPlus(a, b)}`;
+            break;
+            
+        case 'Division':
+            outPut2 = `${a} : ${b} = ${sumDivision(a, b)}`;
+            break;
+
+        case 'Multiplication':
+            outPut2 = `${a} * ${b} = ${sumMultiplication(a, b)}`;
+            break;
+    
+        default:
+            outPut2 = 'Ошибка!';
+            break;
+    }
+
+    outPutNode2.innerHTML += `
+    <ul>
+    <li>
+    Результат: ${outPutNode2.innerText = outPut2}
+    </li>
+    </ul>
+    `;
+});
+
+// Практика 6, лидген форма
+
+const nameInput = document.querySelector('.input-name');
+const emailInput = document.querySelector('.input-email');
+const numberInput = document.querySelector('.input-number');
+const checkboxNode = document.querySelector('.js-check');
+const btnFormNode = document.querySelector('.js-form-btn');
+const formOutputNode = document.querySelector('.js-formOutput');
+
+btnFormNode.addEventListener('click', function () {
+    event.preventDefault();
+
+    const isCheckboxTrue = checkboxNode.checked;
+
+    if (!isCheckboxTrue) {
+        return;
+    };
+
+    formOutputNode.innerHTML = `
+    <ul>
+
+        <li class = 'ulist'>
+        Имя: ${nameInput.value}
+        </li>
+
+        <li class = 'ulist'>
+        Почта: ${emailInput.value}
+        </li>
+        
+        <li class = 'ulist'>
+        Телефон: ${numberInput.value}
+        </li>
+
+    </ul>
+    `;
+});
