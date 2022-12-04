@@ -89,7 +89,7 @@ function log(text) {
 
 // Практика 1, одинокий чат с одним меняющимся текстом
 
-const inputNode = document.querySelector('.js-input');
+const inputNodeFirst = document.querySelector('.js-input');
 const buttonInputNode = document.querySelector('.js-btn');
 const messagesStory = document.querySelector('.messages-story');
 
@@ -97,7 +97,7 @@ buttonInputNode.addEventListener('click', function () {
     event.preventDefault();
 
     messagesStory.innerHTML = `
-    <h2 class = 'inputText'>${inputNode.value}</h2>
+    <h2 class = 'inputText'>${inputNodeFirst.value}</h2>
     `;
 });
 
@@ -367,3 +367,70 @@ btnFormNode.addEventListener('click', function () {
     </ul>
     `;
 });
+
+// Хранение данных
+
+function render(todos, outputNode) {
+    //Логика формирования HTML для вывода описана функцией render
+    let outputListHTML = ``;
+
+    todos.forEach(function (todo) {
+        outputListHTML += `
+        <li>${todo}</li>
+        `;
+    })
+
+    outputNode.innerHTML = `<ul>${outputListHTML}</ul>`;
+}
+
+const inputNode = document.querySelector('.js-input'); // Поле ввода
+const btnNode = document.querySelector('.js-btn'); // Кнопка "Добавить задачу"
+const outputNode = document.querySelector('.js-output'); // Вывод задач
+
+
+let todos = []; // Локальный массив todos (Изначально пустой)
+const storageToDos = localStorage.getItem('todos'); // Пытаемся получить из хранилища todos по ключу (Обычно ключ выносят в константу), затем проверяем =>
+
+// => Если в storage что-то лежит, пробуем распарсить
+if (storageToDos) { 
+    // B todos записать JSON.parse(storageToDos); В todos записываем тот массив, что лежит в storage
+    todos = JSON.parse(storageToDos);
+} 
+
+render(todos, outputNode) // Метод render в HTML выводит todos которые мы туда передаём и выводит в node которую мы туда передаём. При старте приложения вызываем метод render, он смотрит todos если массив todos пустой то ничего не выводим. Если что-то есть то выводим.
+
+// console.log(todos)
+// console.log(storageToDos)
+// console.log(JSON.parse(null))
+
+btnNode.addEventListener('click', function () { 
+    // По клику идём в value и считываем за новую todos, в эту todo пишем value и затем в локальный массив todo мы добавляем новый объект, делаем вывод интерфейса ещё раз.
+    const todo = inputNode.value;
+
+    todos.push(todo);
+
+    render(todos, outputNode);
+    // Один и тот же рендер, но здесь он будет уже обновлённый. +1 задача.
+
+    localStorage.setItem('todos', JSON.stringify(todos)); // Сохраняем обновлённый массив чтоб при перезагрузке не потерять введённые данные.
+});
+
+// localStorage, позволяет нам сохранить, записать данные, чтобы записать данные мы работаем вокруг определённого ключа 'key - value', по этому ключу мы и записываем нужные нам данные. Данные могут быть какими угодно, возможна любая логика. Можно записать, достать, когда мы что-то записали - эти данные сохраняются и не теряются при перезагрузке страницы и даже при перезапуске браузера. Если скинуть ссылку на сайт другому человек и он её откроет, у него не будет тех же сохраненных данных что и у тебя, ибо localStorage сохраняет конкретно на твоём браузере.
+
+// localStorage.setItem('todos', 1);
+
+// // getItem
+// const lastTodoNode = document.querySelector('.js-last-todo');
+// const lastTodo = localStorage.getItem('todo');
+
+// lastTodoNode.innerText = lastTodo;
+
+// // removeItem
+// localStorage.removeItem('todo'); // Очищение ПОСЛЕ первой перезагрузки
+
+// clear
+// localStorage.clear(); // При привязке на кнопку можно очищать историю действий
+
+// Сохранение объекта
+
+// Чтение объекта
