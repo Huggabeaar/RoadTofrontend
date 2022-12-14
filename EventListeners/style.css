@@ -1,0 +1,41 @@
+.cat-img {
+    height: 500px;
+    width: 740px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.traffic-light-wrapper {
+    margin-top: 30px;
+}
+
+.traffic-light {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.traffic-light_green {
+    background-color: green;
+}
+
+.traffic-light_yellow {
+    background-color: yellow;
+}
+
+.traffic-light_red {
+    background-color: red;
+}
+
+.sum-container {
+    margin-top: 30px;
+}
+
+.sum-container_hidden {
+    display: none;
+}
+
+.btn-sum {
+    margin-top: 20px;
+}

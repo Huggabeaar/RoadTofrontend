@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <label for="b">A:</label>
+        <input class="js-a" type="number" name="a" id="a">
+    </div>
+    <div>
+        <label for="b">B:</label>
+        <input class="js-b" type="number" name="b" id="b">
+    </div>
+    <div>
+        <label for="operation">Операция</label>
+        <select class="js-operation" name="operation" id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </div>
+    <button class="js-btn">Выполнить операцию</button>
+    <div class="js-result"></div>
+    <div class="js-logs"></div>
+
+    <script src="math.js"></script>
+    <script src="calculator.js"></script>
+    <script src="logs.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

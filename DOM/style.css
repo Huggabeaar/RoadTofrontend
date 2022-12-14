@@ -1,0 +1,45 @@
+.avito-stories {
+    position: relative;
+    height: 105px;
+}
+
+.stories-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.js-stories {
+    position: absolute;
+    height: 105px;
+}
+
+.stories-image {
+    border-radius: 12px;
+    position: relative;
+    width: 104px;
+    height: 104px;
+    cursor: pointer;
+}
+
+.stories-title {
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 11px;
+    line-height: 16px;
+}
+
+.isViewed {
+    position: absolute;
+    top: -2px;
+    content: '';
+    right: -3px;
+    height: 8px;
+    width: 8px;
+    background-color: #ff6163;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список фильмов</title>
+</head>
+<body>
+    
+    <h1>Посмотреть позже:</h1>
+
+    <div>
+        <label for="title">Название:</label>
+        <input 
+        class="js-title" 
+        type="text" 
+        name="title" 
+        id="title">
+    </div>
+
+    <div>
+        <label for="img">Превью:</label>
+        <input 
+        class="js-img" 
+        type="text" 
+        name="img" 
+        id="img">
+    </div>
+
+    <div>
+        <button class="js-add">Добавить в список</button>
+    </div>
+
+    <div>
+        <h2>В списке:</h2>
+        <div class="js-movies"></div>
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="movie.js"></script>
+    <script src="view.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

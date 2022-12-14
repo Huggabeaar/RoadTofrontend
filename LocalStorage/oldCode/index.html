@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.4</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div>
+
+        <form class="form4">
+
+            <label>Расчёт с описанием и памятью.</label>
+
+            <input 
+            class="inputA js-input-A2"
+            type="number" 
+            name="" 
+            id=""
+            placeholder="Введите число А...">
+
+            <input 
+            class="inputB js-input-B2"
+            type="number" 
+            name="" 
+            id=""
+            placeholder="Введите число В...">
+
+                <label 
+                class="textMathType" 
+                    for="chooseMathType">
+                    Выберите операцию:
+                </label>
+            <select 
+            class="selectMathType js-selectMathType2"
+            name="chooseMathType" 
+            id="">
+
+            <option value="Plus">Сложение</option>
+            <option value="Minus">Вычитание</option>
+            <option value="Division">Деление</option>
+            <option value="Multiplication">Умножение</option>
+
+            </select>
+
+            <label 
+                    class="checkbox-text" for="isEverythingGood">
+                        Числа введены правильно?
+                    </label>
+            <input
+            class="checkbox js-checkbox2" 
+            type="checkbox" 
+            name="isEverythingGood" 
+            id="">
+
+            <button class="btnOutput js-btn-output2">
+                Выполнить операцию
+            </button>
+
+            <div class="js-output2"></div>
+
+        </form>
+
+    </div>
+
+    <form class="form6">
+
+        <label>&nbsp;Ваши прошлые вычисления:</label>
+
+        <div class="js-past-calculations">
+            
+        </div>
+
+    </form>
+
+    <textarea 
+    class="js-textarea"
+    name="" 
+    id="" 
+    cols="30" 
+    rows="10">
+</textarea>
+
+<div class="buttons">
+<button class="js-btn">Очистить историю текста</button>
+<button class="js-clear-btn-math">Очистить историю вычислений</button>
+</div>
+
+<form class="lastForm">
+    <input type="text" name="" id="" placeholder="Введите название" class="js-inputTitle">
+    <input type="text" name="" id="" placeholder="Введите ссылку на изображение" class="js-inputImage">
+    <button class="js-btnCard">Собрать карточку</button>
+</form>
+
+<div class="js-output-card"></div>
+
+ <script src="constants.js"></script>
+ <script src="functions.js"></script>
+ <script src="script.js"></script>
+ <script src="storage.js"></script>
+ <script src="view.js"></script>
+ <script src="model.js"></script>
+
+</body>
+</html>
